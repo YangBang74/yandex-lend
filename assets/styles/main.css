@@ -1,0 +1,48 @@
+@import url('./reset.css');
+@import url('./fonts.css');
+
+body {
+  background-color: #0856a2;
+  color: #fff;
+  font-family: 'Magistral Book', sans-serif;
+  padding-top: clamp(72px, 10vw, 140px);
+}
+
+.container {
+  max-width: clamp(320px, 100%, 1573px);
+  margin: 0 auto;
+  padding: 0 clamp(16px, 2vw, 32px);
+}
+
+.header {
+  position: fixed;
+  top: clamp(12px, 2vw, 32px);
+  left: 0;
+  z-index: 100;
+  width: 100vw;
+  padding: clamp(12px, 1.5vw, 24px) clamp(16px, 2vw, 32px);
+  .header__body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: clamp(22px, 1.75vw, 28px);
+  }
+  .header__logos {
+    display: flex;
+    align-items: center;
+    gap: clamp(16px, 1.75vw, 28px);
+    .header__logo:nth-child(2) {
+      padding-inline: clamp(16px, 1.75vw, 28px);
+      border-left: 2px solid #7e7e7e;
+      border-right: 2px solid #7e7e7e;
+    }
+  }
+  .header__nav-list {
+    display: flex;
+    align-items: center;
+    gap: clamp(20px, 2.5vw, 40px);
+    .header__nav-link {
+      font-size: 1.25rem;
+    }
+  }
+}
