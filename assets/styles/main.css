@@ -93,6 +93,7 @@ body {
 .hero__img {
   position: relative;
   min-width: 100%;
+
   height: 100%;
   height: auto;
   text-align: center;
@@ -154,8 +155,8 @@ body {
 
 .how__item-img {
   width: 50%;
+  border-radius: 100%;
 }
-
 .how__item-block {
   display: flex;
   width: 50%;
@@ -176,6 +177,7 @@ body {
 .how__item-subtext {
   font-size: 24px;
   text-align: center;
+  max-width: 38.5625rem;
 }
 
 .--how-1 {
@@ -198,6 +200,90 @@ body {
   background: url('/assets/images/5.svg') no-repeat center center / contain;
 }
 
+.plus {
+  margin: 12.5rem 0 11.875rem;
+}
+
+.plus__title {
+  font-size: 5rem;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.1;
+  text-transform: uppercase;
+  margin-bottom: 5.625rem;
+  .plus__title-accent {
+    color: #f9d500;
+  }
+}
+
+.plus__body {
+  margin-top: 5.8125rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5.3125rem;
+}
+
+.plus__item {
+  flex: 1;
+  background: #000000;
+  min-height: 27rem;
+  background: linear-gradient(
+    177deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(25, 15, 41, 1) 36%,
+    rgba(46, 30, 72, 1) 77%,
+    rgba(55, 40, 80, 1) 97%
+  );
+  padding: 7.0625rem 6.375rem 1.875rem;
+}
+
+.plus__wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.plus__item-title {
+  font-size: 4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin-bottom: 1.6875rem;
+}
+
+.plus__item-text {
+  font-size: 26px;
+}
+
+.plus__item-img {
+  width: 100%;
+  height: 100%;
+  max-height: 14rem;
+  max-width: 24.875rem;
+  object-fit: contain;
+  object-position: center;
+}
+
+.plus__item-subtext {
+  margin-top: 1.875rem;
+  font-size: 1.125rem;
+}
+
+.plus__subtexts {
+  display: none;
+}
+
+.plus__item-subtext--mobile {
+  display: none;
+}
+
+.plus__item-subtext--desktop {
+  display: block;
+}
+
+.plus__title--mobile {
+  display: none;
+}
+
 @media (max-width: 1440px) {
   .how__item-text {
     font-size: 60px;
@@ -213,7 +299,27 @@ body {
     gap: 1.5rem;
   }
   .how__item-text {
-    font-size: 40px;
+    font-size: 2.5rem;
+  }
+
+  .plus__title {
+    font-size: 3.125rem;
+  }
+
+  .plus__body {
+    gap: 3.125rem;
+  }
+
+  .plus__item {
+    min-height: 16rem;
+    padding: 4.375rem 2.5rem 1.875rem;
+  }
+
+  .plus__item-title {
+    font-size: 2.875rem;
+  }
+  .plus__item-text {
+    font-size: 1.125rem;
   }
 }
 
@@ -262,9 +368,15 @@ body {
   }
   .how__title {
     font-size: 2.3125rem;
+    margin-bottom: 3.125rem;
   }
   .how__item {
     flex-direction: column;
+    gap: 0.9375rem;
+  }
+
+  .how__body {
+    gap: 3.125rem;
   }
 
   .how__item-img {
@@ -281,5 +393,87 @@ body {
   }
   .how__item-subtext {
     font-size: 0.875rem;
+    max-width: 17.25rem;
+  }
+
+  .plus {
+    margin: 3.125rem 0;
+  }
+
+  .plus__title {
+    font-size: 2.3125rem;
+    hyphens: auto;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    margin-bottom: 1.5625rem;
+  }
+  .plus__body {
+    padding: 3.125rem 1.25rem;
+    gap: 2.5rem;
+    background: #000000;
+    margin-top: 3.125rem;
+    background: linear-gradient(
+      177deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(25, 15, 41, 1) 36%,
+      rgba(46, 30, 72, 1) 77%,
+      rgba(55, 40, 80, 1) 97%
+    );
+  }
+  .plus__item {
+    min-height: 12.5rem;
+    padding: 0;
+  }
+
+  .plus__item-title {
+    font-size: 1.75rem;
+    margin-bottom: 1.3125rem;
+  }
+  .plus__item-text {
+    font-size: 1.25rem;
+  }
+  .plus__wrap {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.875rem;
+  }
+
+  .plus__item-img {
+    max-height: 10rem;
+    max-width: 18.75rem;
+    order: 1;
+  }
+
+  .plus__title--mobile {
+    display: block;
+  }
+
+  .plus__title--desktop {
+    display: none;
+  }
+
+  .plus__text {
+    order: 2;
+  }
+  .plus__item {
+    background: transparent;
+  }
+
+  .plus__item-subtext--desktop {
+    display: none;
+  }
+
+  .plus__subtexts {
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+    gap: 1.25rem;
+    margin-top: 2.3125rem;
+  }
+
+  .plus__item-subtext--mobile {
+    display: block;
+    margin-top: 0;
   }
 }
