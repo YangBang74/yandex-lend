@@ -54,7 +54,7 @@ body {
   gap: 2.5rem;
   .header__nav-link {
     text-transform: uppercase;
-    font-size: 1.25rem;
+    font-size: 1.25vw;
   }
 }
 
@@ -387,6 +387,12 @@ body {
 
   .header__body {
     gap: 1.5rem;
+  }
+
+  .header__nav-list {
+    .header__nav-link {
+      font-size: 1.125rem;
+    }
   }
   .how__item-text {
     font-size: 2.5rem;
@@ -855,10 +861,10 @@ body {
 
   .footer__text {
     font-size: 14px;
-
   }
 }
 
-button, a {
+button,
+a {
   transition: scale 0.3s ease;
 }
