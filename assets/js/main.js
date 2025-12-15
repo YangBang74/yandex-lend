@@ -24,7 +24,6 @@ document.addEventListener('DOMContentLoaded', function () {
     })
   })
 
-  // FAQ Accordion functionality
   const faqItems = document.querySelectorAll('.faq__item')
 
   faqItems.forEach((item) => {
@@ -32,13 +31,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const toggle = item.querySelector('.faq__item-toggle')
     const content = item.querySelector('.faq__item-content')
 
-    // Изначально все пункты закрыты
     content.style.maxHeight = '0px'
 
     const handleToggle = () => {
       const isOpen = item.classList.contains('faq__item--open')
 
-      // Закрываем все остальные пункты, чтобы был открыт только один
       faqItems.forEach((otherItem) => {
         if (otherItem !== item) {
           otherItem.classList.remove('faq__item--open')
@@ -50,11 +47,9 @@ document.addEventListener('DOMContentLoaded', function () {
       })
 
       if (isOpen) {
-        // Закрываем текущий
         item.classList.remove('faq__item--open')
         content.style.maxHeight = '0px'
       } else {
-        // Открываем текущий с плавной анимацией по реальной высоте
         item.classList.add('faq__item--open')
         content.style.maxHeight = content.scrollHeight + 'px'
       }
