@@ -30,22 +30,33 @@ document.addEventListener('DOMContentLoaded', function () {
   faqItems.forEach((item) => {
     const header = item.querySelector('.faq__item-header')
     const toggle = item.querySelector('.faq__item-toggle')
+    const content = item.querySelector('.faq__item-content')
+
+    // Изначально все пункты закрыты
+    content.style.maxHeight = '0px'
 
     const handleToggle = () => {
       const isOpen = item.classList.contains('faq__item--open')
 
-      // Close all other FAQ items (optional - remove if you want multiple open at once)
-      // faqItems.forEach((otherItem) => {
-      //   if (otherItem !== item) {
-      //     otherItem.classList.remove('faq__item--open')
-      //   }
-      // })
+      // Закрываем все остальные пункты, чтобы был открыт только один
+      faqItems.forEach((otherItem) => {
+        if (otherItem !== item) {
+          otherItem.classList.remove('faq__item--open')
+          const otherContent = otherItem.querySelector('.faq__item-content')
+          if (otherContent) {
+            otherContent.style.maxHeight = '0px'
+          }
+        }
+      })
 
-      // Toggle current item
       if (isOpen) {
+        // Закрываем текущий
         item.classList.remove('faq__item--open')
+        content.style.maxHeight = '0px'
       } else {
+        // Открываем текущий с плавной анимацией по реальной высоте
         item.classList.add('faq__item--open')
+        content.style.maxHeight = content.scrollHeight + 'px'
       }
     }
 
