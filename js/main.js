@@ -10,19 +10,22 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   })
 
-  openButton.addEventListener('click', function () {
-    winnerItems.forEach((item) => {
-      item.classList.remove('winner__item--hidden')
+  if (openButton) {
+    openButton.addEventListener('click', function () {
+      winnerItems.forEach((item) => {
+        item.classList.remove('winner__item--hidden')
+      })
     })
-  })
-
-  closeButton.addEventListener('click', function () {
-    winnerItems.forEach((item, index) => {
-      if (index >= itemsToShow) {
-        item.classList.add('winner__item--hidden')
-      }
+  }
+  if (closeButton) {
+    closeButton.addEventListener('click', function () {
+      winnerItems.forEach((item, index) => {
+        if (index >= itemsToShow) {
+          item.classList.add('winner__item--hidden')
+        }
+      })
     })
-  })
+  }
 
   const faqItems = document.querySelectorAll('.faq__item')
 
@@ -36,20 +39,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const handleToggle = () => {
       const isOpen = item.classList.contains('faq__item--open')
 
-      faqItems.forEach((otherItem) => {
-        if (otherItem !== item) {
-          otherItem.classList.remove('faq__item--open')
-          const otherContent = otherItem.querySelector('.faq__item-content')
-          if (otherContent) {
-            otherContent.style.maxHeight = '0px'
-          }
-        }
-      })
-
       if (isOpen) {
+        // Закрываем только текущий пункт
         item.classList.remove('faq__item--open')
         content.style.maxHeight = '0px'
       } else {
+        // Открываем текущий пункт, не трогая остальные
         item.classList.add('faq__item--open')
         content.style.maxHeight = content.scrollHeight + 'px'
       }
