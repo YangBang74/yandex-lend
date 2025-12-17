@@ -51,6 +51,9 @@ body {
     border-left: 0.125rem solid #7e7e7e;
     border-right: 0.125rem solid #7e7e7e;
   }
+  .header__logo img {
+    max-height: 6.3125rem;
+  }
 }
 .header__nav-list {
   display: flex;
