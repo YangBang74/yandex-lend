@@ -392,10 +392,13 @@ body {
   margin-top: 5rem;
 }
 
-@media (max-width: 1440px) {
+@media (max-width: 1600px) {
   html {
     font-size: clamp(12px, calc(100vw / 1440 * 16), 12px);
   }
+}
+
+@media (max-width: 1440px) {
   .how__item-text {
     font-size: 3.75rem;
   }
